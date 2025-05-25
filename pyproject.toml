@@ -1,0 +1,47 @@
+[project]
+name = "restate-sql"
+version = "0.1.0"
+description = "A Python DB-API 2.0 compatible interface for querying Restate's SQL introspection API"
+readme = "README.md"
+authors = [
+    { name = "Brian Hart", email = "brian@brainhart.dev" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28.1",
+    "ipykernel>=6.29.5",
+    "jupysql>=0.11.1",
+    "pandas>2",
+    "rich>=14.0.0",
+    "toml>=0.10.2",
+    "typer>=0.9.0",
+]
+keywords = ["restate", "sql", "database", "db-api"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.scripts]
+restate-sql = "restate_sql.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/brainhart/restate-sql-python"
+Repository = "https://github.com/brainhart/restate-sql-python"
+Documentation = "https://github.com/brainhart/restate-sql-python"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.11",
+]
